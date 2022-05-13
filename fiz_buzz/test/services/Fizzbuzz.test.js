@@ -26,3 +26,29 @@ describe("Validacion del explorer explorer para obtener un campo nuevo", () => {
     expect(Fizzbuzz.trick).toBe("FIZZBUZZ");
   });
 });
+describe("Validacion del score para abtener el trick", () => {
+  test("validacion que obtiene el score si este no es divisible entre 3 o 5", () => {
+    const score = 1;
+    const Fizzbuzz = FizzbuzzService.applyValidationInNumber(score); // {name: "Explorer1", score: 1, trick: 1} 
+
+    expect(Fizzbuzz.trick).toBe(1);
+  });
+  test("Validacion que obtiene fizz si el score es divisible entre 3", () => {
+    const score = 3;
+    const Fizzbuzz = FizzbuzzService.applyValidationInNumber(score); // {name: "Explorer1", score: 1, trick: 1} 
+
+    expect(Fizzbuzz.trick).toBe("FIZZ");
+  });
+  test("Validacion que obtiene buzz si el score es divisible entre 5", () => {
+    const score = 5;
+    const Fizzbuzz = FizzbuzzService.applyValidationInNumber(score); // {name: "Explorer1", score: 1, trick: 1} 
+
+    expect(Fizzbuzz.trick).toBe("BUZZ");
+  });
+  test("Validacion que obtiene fizzbuzz si el score es divisible entre 3 y 5", () => {
+    const score = 15;
+    const Fizzbuzz = FizzbuzzService.applyValidationInNumber(score); // {name: "Explorer1", score: 1, trick: 1} 
+
+    expect(Fizzbuzz.trick).toBe("FIZZBUZZ");
+  });
+});

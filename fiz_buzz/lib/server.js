@@ -26,6 +26,12 @@ app.get("/v1/explorers/usernames/:mission", (request, response) => {
   response.json(explorerUsernameInMission);
 });
 
+app.get("/v1/fizzbuzz/:score", (request, response) => {
+  const score = request.params.score;
+  const fizzbuzz = ExplorerController.applyFizzbuzzValidationInNumber(score);
+  response.json(fizzbuzz);
+});
+
 app.listen(port, () => {
   console.log(`FizzBuzz API in localhost:${port}`);
 });

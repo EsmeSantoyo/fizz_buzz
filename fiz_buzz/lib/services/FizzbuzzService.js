@@ -11,6 +11,18 @@ class FizzbuzzService {
     }
     return explorer;
   }
+
+  static applyValidationInNumber(score){
+    let trick = score;
+    if(score % 5 === 0 && score % 3 === 0){
+      trick = "FIZZBUZZ";
+    } else if(score % 3 === 0){
+      trick = "FIZZ";
+    } else if(score % 5 === 0){
+      trick = "BUZZ";
+    }
+    return {score: score, trick: trick};
+  }  
 }
 
 module.exports = FizzbuzzService;
